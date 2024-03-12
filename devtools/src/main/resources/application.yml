@@ -1,0 +1,9 @@
+# 以下配置用于自定义热部署，也可不设置（使用默认属性）
+spring:
+  devtools:
+    restart:
+      enabled: true                     # 设置开启热部署
+      additional-paths: src/main/java   # 重启目录
+      exclude: WEB-INF/**               # 指定目录不更新
+  freemarker:
+    cache: false                        # 页面不加载缓存，修改立即生效

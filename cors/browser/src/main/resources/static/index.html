@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <input type="button" value="getHello" onclick="getHello()">
+    <script>
+        function getHello(){
+          $.ajax({
+              type:'POST',
+              /* 访问Server中的接口 */
+              url:'http://localhost:8888/hello',
+              data:JSON.stringify({
+                  "message":"Hello server"
+              }),
+              dataType:"json",
+              contentType:"application/json;charset=UTF-8",
+              success:function(msg){
+              }
+          })
+        }
+    </script>
+</body>
+</html>

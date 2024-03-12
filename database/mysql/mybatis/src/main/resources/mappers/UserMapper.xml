@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybtais.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    注意:
+    1. namespace需要与使用@Mapper的接口对应
+    2. UserMapper.xml文件名称必须与使用@Mapper的接口一致
+    3. 标签中的id必须与@Mapper接口中的方法名一致，且参数一致
+-->
+
+<!-- 如何理解namespace？ -->
+<mapper namespace="com.winds.mapper.UserMapper">
+    <!--  -->
+    <resultMap id="UserResult" type="com.winds.domain.User">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <!--  -->
+    <select id="findAll" resultMap="UserResult">
+        select * from user;
+    </select>
+
+    <insert id="addUser" parameterType="com.winds.domain.User">
+        insert into user (name,password) values (#{name},#{password});
+    </insert>
+
+</mapper>

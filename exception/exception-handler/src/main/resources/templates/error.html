@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<!-- 引入命名空间 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义异常处理页面</title>
+</head>
+<body>
+    @ExceptionHandler注解的异常处理<br>
+    出错信息:<span th:text="${msg}"></span>
+</body>
+</html>

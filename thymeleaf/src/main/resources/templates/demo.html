@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- 在页面导入Thymeleaf的命名空间，以获得更好的提示，写在html标签中 -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p th:text="${title}"></p>
+    <table border="1" width="60%" align="center">
+        <tr>
+            <td th:text="${heads[0]}"></td>
+            <td th:text="${heads[1]}"></td>
+            <td th:text="${heads[2]}"></td>
+        </tr>
+        <tr th:each="user:${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.address}"></td>
+        </tr>
+    </table>
+</body>
+</html>

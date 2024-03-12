@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单文件上传</title>
+</head>
+<body>
+    <!-- 上传文件必须将表单的method设置为post，并将enctype设置为multipart/form-data，只有这样，浏览器才会把用户所选文件的二进制数据发送给服务器 -->
+    <p>单文件上传</p>
+    <form method="post" action="/file/upload" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="上传">
+    </form>
+    <hr>
+    <p>多文件上传</p>
+    <form method="post" action="/file/uploads" enctype="multipart/form-data">
+        <!-- 添加multipart属性，可以按住ctrl件多选文件 -->
+        <input type="file" multiple name="file">
+        <input type="submit" value="上传">
+    </form>
+</body>
+</html>
